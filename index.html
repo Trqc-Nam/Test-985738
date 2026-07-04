@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaaS Alternative Dashboard - 2026 Edition</title>
-    <!-- Tailwind CSS -->
+    <title>SaaS Alternative - Giải Pháp Phần Mềm Doanh Nghiệp 2026</title>
+    <!-- Tailwind CSS thông qua CDN để tối ưu hóa việc dựng giao diện nhanh -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- html2canvas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -17,122 +15,107 @@
                         bglight: '#fff7fc',
                         accent: '#ff72ce',
                         secondary: '#8c94ff',
-                        dark: '#090815'
+                        dark: '#121124'
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #fff7fc;
+            /* Tạo lưới Grid nền mờ ảo phong cách SaaS công nghệ */
             background-image: 
-                radial-gradient(at 0% 0%, rgba(255, 114, 206, 0.12) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(86, 84, 254, 0.08) 0px, transparent 50%),
-                linear-gradient(rgba(86, 84, 254, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(86, 84, 254, 0.02) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+                radial-gradient(at 0% 0%, rgba(255, 114, 206, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(86, 84, 254, 0.12) 0px, transparent 50%),
+                linear-gradient(rgba(86, 84, 254, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(86, 84, 254, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 45px 45px, 45px 45px;
         }
-        /* Cố định kích thước thẻ 1:1 cực đẹp, tối ưu hóa cho html2canvas */
-        .square-card {
-            width: 600px;
-            height: 600px;
-            background-color: #090815;
-            border: 2px solid #222145;
-            box-sizing: border-box;
-            position: relative;
-            box-shadow: 0 40px 80px -20px rgba(9, 8, 21, 0.4);
-        }
-        /* Khung cuộn ngang mượt mà khi xem trên mobile */
-        .card-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            display: flex;
-            justify-content: center;
-            padding: 30px 0;
+        /* Hiệu ứng thẻ nổi dạng kính */
+        .saas-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border: 2px solid rgba(86, 84, 254, 0.15);
+            box-shadow: 0 30px 60px -15px rgba(86, 84, 254, 0.15);
         }
     </style>
 </head>
 <body class="py-16 px-4 flex flex-col items-center">
 
-    <!-- TIÊU ĐỀ HƯỚNG DẪN -->
-    <div class="max-w-md w-full mb-12 bg-white border-2 border-dark p-6 rounded-3xl shadow-sm text-center">
-        <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-3">SaaS UI Generation Tool</span>
-        <h2 class="text-xl font-extrabold text-dark mb-2">Trình xuất ảnh Đồ họa Doanh nghiệp</h2>
-        <p class="text-xs text-gray-500 leading-relaxed">
-            Hệ thống đã khóa cứng kích thước <b>600x600 (Square 1:1)</b>. Nhấn nút <b>Tải ảnh</b> để tải file PNG chất lượng cao, sắc nét đã được loại bỏ nút thừa.
+    <!-- PHẦN TIÊU ĐỀ CHÍNH (ẢNH BÌA/HEADER) -->
+    <div class="max-w-4xl w-full mb-32 text-center relative px-6 py-12 rounded-3xl border-2 border-dashed border-[#8c94ff] bg-white/40">
+        <span class="absolute top-[-14px] left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">Ảnh Cover</span>
+        <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            Giải Pháp Tối Ưu Cho Doanh Nghiệp 2026
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-dark tracking-tight leading-tight">
+            Chuyển Đổi <span class="text-primary">Phần Mềm Miễn Phí</span><br>Cho Người Dùng Non-IT
+        </h1>
+        <p class="mt-4 text-gray-600 max-w-xl mx-auto text-base">
+            Giao diện trực quan gần giống bản gốc nhất • Chạy mượt trên Windows, macOS, Linux • Tự do sử dụng thương mại mà không lo vi phạm bản quyền.
         </p>
     </div>
 
     <!-- 01. BỘ CÔNG CỤ VĂN PHÒNG -->
-    <div class="card-wrapper">
-        <div id="card-01" class="square-card rounded-3xl overflow-hidden flex flex-col">
-            <!-- Window Topbar -->
-            <div class="h-14 bg-[#090815] px-6 flex items-center justify-between border-b border-[#222145]">
+    <div class="relative w-full max-w-4xl my-24">
+        <div class="absolute -top-12 left-0 right-0 flex justify-between text-xs text-secondary font-semibold border-b border-dashed border-secondary/40 pb-2">
+            <span>✂️ KHUNG CẮT ẢNH SỐ 1 (VĂN PHÒNG)</span>
+            <span>Tỷ lệ: 4:3 / Ngang</span>
+        </div>
+        
+        <div class="saas-card rounded-3xl overflow-hidden">
+            <div class="bg-dark/5 px-6 py-4 flex items-center justify-between border-b border-dark/10">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-red-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-green-400"></span>
                 </div>
-                <div class="text-[10px] font-extrabold tracking-widest text-[#8c94ff] uppercase">01 // OFFICE SUITE</div>
-                <button onclick="downloadCard('card-01', '01_Office')" class="btn-download bg-primary hover:bg-[#8c94ff] text-white text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-[#8c94ff] transition-all">
-                    TẢI ẢNH 📸
-                </button>
+                <div class="text-xs font-bold text-dark/40 tracking-wider uppercase">01. Office Suite Solution</div>
+                <div class="w-16"></div>
             </div>
-            <!-- Window Body -->
-            <div class="flex-1 flex">
-                <!-- Sidebar (Left Pane) -->
-                <div class="w-[220px] bg-[#0f0e24] p-6 border-r border-[#222145] flex flex-col justify-between">
-                    <div class="space-y-5">
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#8c94ff]/60 tracking-wider uppercase block mb-1.5">Bản gốc trả phí</span>
-                            <div class="bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-2 rounded-xl line-through">
-                                Microsoft Office
-                            </div>
-                        </div>
-                        <div class="text-center text-[#ff72ce] text-xs font-bold">⬇ THAY THẾ BẰNG ⬇</div>
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#ff72ce] tracking-wider uppercase block mb-1.5">Mã nguồn mở</span>
-                            <div class="bg-primary/20 border-2 border-primary text-white text-sm font-black px-3 py-2.5 rounded-xl text-center shadow-[0_0_15px_rgba(86,84,254,0.3)]">
-                                ONLYOFFICE
-                            </div>
-                        </div>
+            <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-5 flex flex-col justify-between bg-dark text-white rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bản gốc trả phí</div>
+                        <h3 class="text-xl font-bold text-gray-300 line-through">MS Office (Word, Excel)</h3>
+                        <div class="my-4 text-center text-secondary text-2xl font-bold">⬇️ THAY THẾ BẰNG ⬇️</div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Ứng dụng thay thế</div>
+                        <h2 class="text-3xl font-extrabold text-white">ONLYOFFICE</h2>
+                        <span class="inline-block mt-2 bg-primary text-white text-xs px-3 py-1 rounded-md font-semibold">Desktop Editors</span>
                     </div>
-                    <!-- OS badges -->
-                    <div class="flex gap-1.5 justify-center">
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WIN</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">MAC</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">LIN</span>
+                    <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Windows</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">macOS</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Linux</span>
                     </div>
                 </div>
-                <!-- Main Content Area (Right Pane) -->
-                <div class="flex-1 bg-[#161530] p-6 flex flex-col justify-between">
+                <div class="md:col-span-7 flex flex-col justify-between">
                     <div>
-                        <div class="inline-block bg-[#ff72ce]/15 border border-[#ff72ce]/30 text-[#ff72ce] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4">
-                            Giấy phép AGPLv3 • Free Doanh Nghiệp
-                        </div>
-                        <h4 class="text-base font-extrabold text-white leading-tight mb-3">Bộ Soạn Thảo Văn Phòng Đa Năng</h4>
-                        <p class="text-[12px] text-gray-300 leading-relaxed mb-4">
-                            Giao diện thanh công cụ dạng thẻ (Ribbon) cực kỳ quen thuộc, tương thích xuất sắc với định dạng <strong class="text-[#8c94ff]">.docx, .xlsx, .pptx</strong>.
+                        <div class="inline-block bg-accent/15 text-accent text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Giấy phép AGPLv3 • Miễn phí Doanh Nghiệp</div>
+                        <h4 class="text-2xl font-extrabold text-dark mb-3">Bộ Soạn Thảo Văn Phòng Chuẩn SaaS</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Giao diện thanh công cụ dạng thẻ (Ribbon) cực kỳ quen thuộc, tương thích xuất sắc với các file định dạng <strong class="text-primary">.docx, .xlsx, .pptx</strong> mà ít khi lo bị lệch khung hình hay lỗi phông chữ.
                         </p>
-                        <div class="space-y-2 text-[12px] text-gray-200">
+                        <div class="space-y-2 text-sm">
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Tương thích 95% bố cục văn bản MS Office</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Tương thích 95% bố cục văn bản của MS Word/Excel</span>
                             </div>
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Giao diện trực quan, không cần đào tạo lại</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Giao diện thẻ trực quan không cần học lại cách dùng</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Warning / Alert -->
-                    <div class="bg-[#222145]/60 border-l-4 border-yellow-500 p-3 rounded-r-xl">
-                        <span class="text-[9px] font-bold text-yellow-500 uppercase block mb-0.5">⚠️ LƯU Ý CHUYỂN ĐỔI</span>
-                        <p class="text-[11px] text-gray-400 leading-normal">
-                            Sử dụng Javascript thay cho VBA Macro. Nhân viên kế toán sử dụng Excel nặng cần lưu ý.
+                    <div class="mt-6 pt-4 border-t border-gray-100 bg-bglight p-3 rounded-xl border border-[#ff72ce]/10">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">⚠️ LƯU Ý KHI CHUYỂN ĐỔI:</span>
+                        <p class="text-[12px] text-gray-500 leading-relaxed">
+                            ONLYOFFICE sử dụng Javascript để xử lý tập lệnh (Macro). Nếu bộ phận Kế toán của bạn có các file Excel chứa Macro chạy bằng VBA phức tạp, cần xem xét xử lý thủ công hoặc chuyển đổi định dạng.
                         </p>
                     </div>
                 </div>
@@ -141,67 +124,61 @@
     </div>
 
 
-    <!-- 02. QUẢN LÝ & XỬ LÝ PDF -->
-    <div class="card-wrapper">
-        <div id="card-02" class="square-card rounded-3xl overflow-hidden flex flex-col">
-            <div class="h-14 bg-[#090815] px-6 flex items-center justify-between border-b border-[#222145]">
+    <!-- 02. CHỈNH SỬA & XỬ LÝ PDF -->
+    <div class="relative w-full max-w-4xl my-24">
+        <div class="absolute -top-12 left-0 right-0 flex justify-between text-xs text-secondary font-semibold border-b border-dashed border-secondary/40 pb-2">
+            <span>✂️ KHUNG CẮT ẢNH SỐ 2 (PDF)</span>
+            <span>Tỷ lệ: 4:3 / Ngang</span>
+        </div>
+        
+        <div class="saas-card rounded-3xl overflow-hidden">
+            <div class="bg-dark/5 px-6 py-4 flex items-center justify-between border-b border-dark/10">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-red-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-green-400"></span>
                 </div>
-                <div class="text-[10px] font-extrabold tracking-widest text-[#8c94ff] uppercase">02 // PDF MANAGEMENT</div>
-                <button onclick="downloadCard('card-02', '02_PDF')" class="btn-download bg-primary hover:bg-[#8c94ff] text-white text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-[#8c94ff] transition-all">
-                    TẢI ẢNH 📸
-                </button>
+                <div class="text-xs font-bold text-dark/40 tracking-wider uppercase">02. PDF Management Tool</div>
+                <div class="w-16"></div>
             </div>
-            <div class="flex-1 flex">
-                <div class="w-[220px] bg-[#0f0e24] p-6 border-r border-[#222145] flex flex-col justify-between">
-                    <div class="space-y-5">
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#8c94ff]/60 tracking-wider uppercase block mb-1.5">Bản gốc trả phí</span>
-                            <div class="bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-2 rounded-xl line-through">
-                                Adobe Acrobat Pro
-                            </div>
-                        </div>
-                        <div class="text-center text-[#ff72ce] text-xs font-bold">⬇ THAY THẾ BẰNG ⬇</div>
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#ff72ce] tracking-wider uppercase block mb-1.5">Mã nguồn mở</span>
-                            <div class="bg-primary/20 border-2 border-primary text-white text-sm font-black px-3 py-2.5 rounded-xl text-center shadow-[0_0_15px_rgba(86,84,254,0.3)]">
-                                Stirling-PDF
-                            </div>
-                        </div>
+            <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-5 flex flex-col justify-between bg-dark text-white rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bản gốc trả phí</div>
+                        <h3 class="text-xl font-bold text-gray-300 line-through">Adobe Acrobat Pro</h3>
+                        <div class="my-4 text-center text-secondary text-2xl font-bold">⬇️ THAY THẾ BẰNG ⬇️</div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Phần mềm đa năng</div>
+                        <h2 class="text-3xl font-extrabold text-white">Stirling-PDF</h2>
+                        <span class="inline-block mt-2 bg-primary text-white text-xs px-3 py-1 rounded-md font-semibold">& ONLYOFFICE PDF</span>
                     </div>
-                    <div class="flex gap-1.5 justify-center">
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WIN</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">MAC</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">LIN</span>
+                    <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Trình duyệt Web</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Mọi Hệ Điều Hành</span>
                     </div>
                 </div>
-                <div class="flex-1 bg-[#161530] p-6 flex flex-col justify-between">
+                <div class="md:col-span-7 flex flex-col justify-between">
                     <div>
-                        <div class="inline-block bg-[#ff72ce]/15 border border-[#ff72ce]/30 text-[#ff72ce] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4">
-                            Giấy phép Apache 2.0 • Offline 100%
-                        </div>
-                        <h4 class="text-base font-extrabold text-white leading-tight mb-3">Xử Lý & Biên Tập PDF Toàn Diện</h4>
-                        <p class="text-[12px] text-gray-300 leading-relaxed mb-4">
-                            Gộp trang, tách file, nén PDF cực mạnh trực tiếp trên trình duyệt. Kết hợp <strong class="text-[#8c94ff]">ONLYOFFICE PDF</strong> để sửa text và ký số.
+                        <div class="inline-block bg-accent/15 text-accent text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Giấy phép Apache 2.0 • Hoàn toàn Bảo Mật</div>
+                        <h4 class="text-2xl font-extrabold text-dark mb-3">Quản Lý & Biên Tập PDF Toàn Diện</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Sử dụng <strong class="text-primary">ONLYOFFICE PDF</strong> để chỉnh sửa văn bản trực tiếp hoặc ký số. Với các tác vụ phức tạp (gộp, tách, nén, chuyển đổi PDF), <strong class="text-accent">Stirling-PDF</strong> chạy offline ngay trên trình duyệt sẽ giải quyết triệt để mọi nhu cầu.
                         </p>
-                        <div class="space-y-2 text-[12px] text-gray-200">
+                        <div class="space-y-2 text-sm">
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Nén file PDF nhanh giúp gửi email dễ dàng</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Nén file PDF cực mạnh giúp gửi email dễ dàng</span>
                             </div>
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Bảo mật tuyệt đối, không đẩy file lên Cloud</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Tách trang, gộp file, chuyển ảnh sang PDF nhanh gọn</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#222145]/60 border-l-4 border-yellow-500 p-3 rounded-r-xl">
-                        <span class="text-[9px] font-bold text-yellow-500 uppercase block mb-0.5">⚠️ MẸO SỬ DỤNG</span>
-                        <p class="text-[11px] text-gray-400 leading-normal">
-                            Stirling-PDF chạy mượt mà ngay trên trình duyệt máy tính của bạn bằng phương thức Docker nội bộ.
+                    <div class="mt-6 pt-4 border-t border-gray-100 bg-bglight p-3 rounded-xl border border-[#ff72ce]/10">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">🔒 BẢO MẬT TUYỆT ĐỐI:</span>
+                        <p class="text-[12px] text-gray-500 leading-relaxed">
+                            Stirling-PDF chạy 100% cục bộ trên máy tính hoặc máy chủ nội bộ của công ty bạn, không đẩy file của doanh nghiệp lên đám mây của bên thứ ba như các dịch vụ lậu trên mạng.
                         </p>
                     </div>
                 </div>
@@ -210,67 +187,62 @@
     </div>
 
 
-    <!-- 03. CHỈNH SỬA ẢNH -->
-    <div class="card-wrapper">
-        <div id="card-03" class="square-card rounded-3xl overflow-hidden flex flex-col">
-            <div class="h-14 bg-[#090815] px-6 flex items-center justify-between border-b border-[#222145]">
+    <!-- 03. CHỈNH SỬA ẢNH CHUYÊN NGHIỆP -->
+    <div class="relative w-full max-w-4xl my-24">
+        <div class="absolute -top-12 left-0 right-0 flex justify-between text-xs text-secondary font-semibold border-b border-dashed border-secondary/40 pb-2">
+            <span>✂️ KHUNG CẮT ẢNH SỐ 3 (CHỈNH ẢNH)</span>
+            <span>Tỷ lệ: 4:3 / Ngang</span>
+        </div>
+        
+        <div class="saas-card rounded-3xl overflow-hidden">
+            <div class="bg-dark/5 px-6 py-4 flex items-center justify-between border-b border-dark/10">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-red-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-green-400"></span>
                 </div>
-                <div class="text-[10px] font-extrabold tracking-widest text-[#8c94ff] uppercase">03 // IMAGE EDITOR</div>
-                <button onclick="downloadCard('card-03', '03_Image')" class="btn-download bg-primary hover:bg-[#8c94ff] text-white text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-[#8c94ff] transition-all">
-                    TẢI ẢNH 📸
-                </button>
+                <div class="text-xs font-bold text-dark/40 tracking-wider uppercase">03. Raster Graphics Editor</div>
+                <div class="w-16"></div>
             </div>
-            <div class="flex-1 flex">
-                <div class="w-[220px] bg-[#0f0e24] p-6 border-r border-[#222145] flex flex-col justify-between">
-                    <div class="space-y-5">
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#8c94ff]/60 tracking-wider uppercase block mb-1.5">Bản gốc trả phí</span>
-                            <div class="bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-2 rounded-xl line-through">
-                                Adobe Photoshop
-                            </div>
-                        </div>
-                        <div class="text-center text-[#ff72ce] text-xs font-bold">⬇ THAY THẾ BẰNG ⬇</div>
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#ff72ce] tracking-wider uppercase block mb-1.5">Mã nguồn mở</span>
-                            <div class="bg-primary/20 border-2 border-primary text-white text-sm font-black px-3 py-2.5 rounded-xl text-center shadow-[0_0_15px_rgba(86,84,254,0.3)]">
-                                KRITA
-                            </div>
-                        </div>
+            <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-5 flex flex-col justify-between bg-dark text-white rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bản gốc trả phí</div>
+                        <h3 class="text-xl font-bold text-gray-300 line-through">Adobe Photoshop</h3>
+                        <div class="my-4 text-center text-secondary text-2xl font-bold">⬇️ THAY THẾ BẰNG ⬇️</div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Sẵn sàng sử dụng</div>
+                        <h2 class="text-3xl font-extrabold text-white">KRITA</h2>
+                        <span class="inline-block mt-2 bg-primary text-white text-xs px-3 py-1 rounded-md font-semibold">Hoặc GIMP + PhotoGIMP</span>
                     </div>
-                    <div class="flex gap-1.5 justify-center">
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WIN</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">MAC</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">LIN</span>
+                    <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Windows</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">macOS</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Linux</span>
                     </div>
                 </div>
-                <div class="flex-1 bg-[#161530] p-6 flex flex-col justify-between">
+                <div class="md:col-span-7 flex flex-col justify-between">
                     <div>
-                        <div class="inline-block bg-[#ff72ce]/15 border border-[#ff72ce]/30 text-[#ff72ce] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4">
-                            Giấy phép GPL • Miễn Phí 100%
-                        </div>
-                        <h4 class="text-base font-extrabold text-white leading-tight mb-3">Chỉnh Sửa Ảnh & Vẽ Chuyên Nghiệp</h4>
-                        <p class="text-[12px] text-gray-300 leading-relaxed mb-4">
-                            <strong class="text-[#8c94ff]">Krita</strong> sở hữu giao diện tối bóng bẩy, trực quan giúp nhân viên không chuyên dễ dàng tiếp cận hơn so với GIMP truyền thống.
+                        <div class="inline-block bg-accent/15 text-accent text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Giấy phép GPL • Miễn phí 100%</div>
+                        <h4 class="text-2xl font-extrabold text-dark mb-3">Thiết Kế & Xử Lý Ảnh Chuyên Nghiệp</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            <strong class="text-primary">Krita</strong> đem đến giao diện tối hiện đại, cách quản lý layer trực quan chuẩn công nghiệp giúp người dùng không chuyên tiếp cận dễ dàng hơn GIMP truyền thống mà không cần chỉnh sửa sâu hệ thống.
                         </p>
-                        <div class="space-y-2 text-[12px] text-gray-200">
+                        <div class="space-y-2 text-sm">
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Quản lý layer, mask và bộ lọc mượt mà</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Quản lý layer, mask, bộ lọc filter cực kỳ mượt mà</span>
                             </div>
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Hỗ trợ vẽ minh họa và blend màu hiệu quả</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Tối ưu cho việc vẽ minh họa lẫn chỉnh ảnh cơ bản</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#222145]/60 border-l-4 border-yellow-500 p-3 rounded-r-xl">
-                        <span class="text-[9px] font-bold text-yellow-500 uppercase block mb-0.5">💡 LỰA CHỌN KHÁC</span>
-                        <p class="text-[11px] text-gray-400 leading-normal">
-                            Có thể cài GIMP kết hợp "PhotoGIMP" từ cộng đồng để chuyển đổi phím tắt giống hệt Photoshop.
+                    <div class="mt-6 pt-4 border-t border-gray-100 bg-bglight p-3 rounded-xl border border-[#ff72ce]/10">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">💡 LỰA CHỌN PHỤ CHO POWER-USER:</span>
+                        <p class="text-[12px] text-gray-500 leading-relaxed">
+                            Nếu thiết kế viên cần phím tắt giống hệt Photoshop, hãy chọn GIMP và cài thêm gói cấu hình "PhotoGIMP" từ cộng đồng để đưa bố cục công cụ về chuẩn Adobe.
                         </p>
                     </div>
                 </div>
@@ -279,67 +251,61 @@
     </div>
 
 
-    <!-- 04. THIẾT KẾ VECTOR -->
-    <div class="card-wrapper">
-        <div id="card-04" class="square-card rounded-3xl overflow-hidden flex flex-col">
-            <div class="h-14 bg-[#090815] px-6 flex items-center justify-between border-b border-[#222145]">
+    <!-- 04. THIẾT KẾ VECTOR & TRUYỀN THÔNG -->
+    <div class="relative w-full max-w-4xl my-24">
+        <div class="absolute -top-12 left-0 right-0 flex justify-between text-xs text-secondary font-semibold border-b border-dashed border-secondary/40 pb-2">
+            <span>✂️ KHUNG CẮT ẢNH SỐ 4 (VECTOR)</span>
+            <span>Tỷ lệ: 4:3 / Ngang</span>
+        </div>
+        
+        <div class="saas-card rounded-3xl overflow-hidden">
+            <div class="bg-dark/5 px-6 py-4 flex items-center justify-between border-b border-dark/10">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-red-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-green-400"></span>
                 </div>
-                <div class="text-[10px] font-extrabold tracking-widest text-[#8c94ff] uppercase">04 // VECTOR LAYOUT</div>
-                <button onclick="downloadCard('card-04', '04_Vector')" class="btn-download bg-primary hover:bg-[#8c94ff] text-white text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-[#8c94ff] transition-all">
-                    TẢI ẢNH 📸
-                </button>
+                <div class="text-xs font-bold text-dark/40 tracking-wider uppercase">04. Vector Graphic Layout</div>
+                <div class="w-16"></div>
             </div>
-            <div class="flex-1 flex">
-                <div class="w-[220px] bg-[#0f0e24] p-6 border-r border-[#222145] flex flex-col justify-between">
-                    <div class="space-y-5">
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#8c94ff]/60 tracking-wider uppercase block mb-1.5">Bản gốc trả phí</span>
-                            <div class="bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-2 rounded-xl line-through">
-                                Illustrator / Figma
-                            </div>
-                        </div>
-                        <div class="text-center text-[#ff72ce] text-xs font-bold">⬇ THAY THẾ BẰNG ⬇</div>
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#ff72ce] tracking-wider uppercase block mb-1.5">Layout mượt mà</span>
-                            <div class="bg-primary/20 border-2 border-primary text-white text-sm font-black px-3 py-2.5 rounded-xl text-center shadow-[0_0_15px_rgba(86,84,254,0.3)]">
-                                PENPOT
-                            </div>
-                        </div>
+            <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-5 flex flex-col justify-between bg-dark text-white rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bản gốc trả phí</div>
+                        <h3 class="text-xl font-bold text-gray-300 line-through">Adobe Illustrator / Figma</h3>
+                        <div class="my-4 text-center text-secondary text-2xl font-bold">⬇️ THAY THẾ BẰNG ⬇️</div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Layout & Marketing</div>
+                        <h2 class="text-3xl font-extrabold text-white">PENPOT</h2>
+                        <span class="inline-block mt-2 bg-primary text-white text-xs px-3 py-1 rounded-md font-semibold">& Inkscape Offline</span>
                     </div>
-                    <div class="flex gap-1.5 justify-center">
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WEB</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WIN</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">MAC</span>
+                    <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Trình Duyệt</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Dễ học cho Marketing</span>
                     </div>
                 </div>
-                <div class="flex-1 bg-[#161530] p-6 flex flex-col justify-between">
+                <div class="md:col-span-7 flex flex-col justify-between">
                     <div>
-                        <div class="inline-block bg-[#ff72ce]/15 border border-[#ff72ce]/30 text-[#ff72ce] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4">
-                            Mã Nguồn Mở • MPL 2.0 • Free 100%
-                        </div>
-                        <h4 class="text-base font-extrabold text-white leading-tight mb-3">Thiết Kế Banner & Layout Kéo Thả</h4>
-                        <p class="text-[12px] text-gray-300 leading-relaxed mb-4">
-                            <strong class="text-[#8c94ff]">Penpot</strong> là công cụ thiết kế chạy trên trình duyệt cực đẹp giống Canva/Figma. Hỗ trợ đắc lực cho phòng truyền thông tự tạo slide, banner quảng cáo.
+                        <div class="inline-block bg-accent/15 text-accent text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Mã Nguồn Mở • MPL 2.0 • Không Giới Hạn</div>
+                        <h4 class="text-2xl font-extrabold text-dark mb-3">Thiết Kế Banner & Layout Hiện Đại</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            <strong class="text-primary">Penpot</strong> là giải pháp thiết kế kéo thả dạng web-base cực kỳ trực quan giống Canva và Figma. Rất thích hợp cho nhân viên nội dung thiết kế slide thuyết trình, banner hoặc ảnh truyền thông.
                         </p>
-                        <div class="space-y-2 text-[12px] text-gray-200">
+                        <div class="space-y-2 text-sm">
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Kéo thả dễ dàng, căn chỉnh layout tự động</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Dễ kéo thả hình ảnh, tạo các layout cân đối tự động</span>
                             </div>
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Làm việc nhóm trực tuyến thời gian thực</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Sử dụng trực tiếp trên web, làm việc nhóm thời gian thực</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#222145]/60 border-l-4 border-yellow-500 p-3 rounded-r-xl">
-                        <span class="text-[9px] font-bold text-yellow-500 uppercase block mb-0.5">🛠 IN ẤN LỚN</span>
-                        <p class="text-[11px] text-gray-400 leading-normal">
-                            Nếu cần phần mềm cài offline phục vụ vẽ vector kỹ thuật lớn gửi nhà in, hãy chọn Inkscape.
+                    <div class="mt-6 pt-4 border-t border-gray-100 bg-bglight p-3 rounded-xl border border-[#ff72ce]/10">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">🛠 KHÁCH HÀNG KỸ THUẬT:</span>
+                        <p class="text-[12px] text-gray-500 leading-relaxed">
+                            Nếu cần một công cụ offline để làm việc với các bản vẽ vector chuyên sâu và chuẩn bị file in ấn lớn (SVG, EPS), hãy cài thêm Inkscape.
                         </p>
                     </div>
                 </div>
@@ -348,67 +314,62 @@
     </div>
 
 
-    <!-- 05. VẼ SƠ ĐỒ -->
-    <div class="card-wrapper">
-        <div id="card-05" class="square-card rounded-3xl overflow-hidden flex flex-col">
-            <div class="h-14 bg-[#090815] px-6 flex items-center justify-between border-b border-[#222145]">
+    <!-- 05. SƠ ĐỒ & QUY TRÌNH -->
+    <div class="relative w-full max-w-4xl my-24">
+        <div class="absolute -top-12 left-0 right-0 flex justify-between text-xs text-secondary font-semibold border-b border-dashed border-secondary/40 pb-2">
+            <span>✂️ KHUNG CẮT ẢNH SỐ 5 (SƠ ĐỒ)</span>
+            <span>Tỷ lệ: 4:3 / Ngang</span>
+        </div>
+        
+        <div class="saas-card rounded-3xl overflow-hidden">
+            <div class="bg-dark/5 px-6 py-4 flex items-center justify-between border-b border-dark/10">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-red-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-green-400"></span>
                 </div>
-                <div class="text-[10px] font-extrabold tracking-widest text-[#8c94ff] uppercase">05 // DIAGRAM CREATOR</div>
-                <button onclick="downloadCard('card-05', '05_Diagram')" class="btn-download bg-primary hover:bg-[#8c94ff] text-white text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-[#8c94ff] transition-all">
-                    TẢI ẢNH 📸
-                </button>
+                <div class="text-xs font-bold text-dark/40 tracking-wider uppercase">05. Diagram & Flowchart Builder</div>
+                <div class="w-16"></div>
             </div>
-            <div class="flex-1 flex">
-                <div class="w-[220px] bg-[#0f0e24] p-6 border-r border-[#222145] flex flex-col justify-between">
-                    <div class="space-y-5">
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#8c94ff]/60 tracking-wider uppercase block mb-1.5">Bản gốc trả phí</span>
-                            <div class="bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-2 rounded-xl line-through">
-                                Visio / Lucidchart
-                            </div>
-                        </div>
-                        <div class="text-center text-[#ff72ce] text-xs font-bold">⬇ THAY THẾ BẰNG ⬇</div>
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#ff72ce] tracking-wider uppercase block mb-1.5">Vẽ kéo thả</span>
-                            <div class="bg-primary/20 border-2 border-primary text-white text-sm font-black px-3 py-2.5 rounded-xl text-center shadow-[0_0_15px_rgba(86,84,254,0.3)]">
-                                draw.io
-                            </div>
-                        </div>
+            <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-5 flex flex-col justify-between bg-dark text-white rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bản gốc trả phí</div>
+                        <h3 class="text-xl font-bold text-gray-300 line-through">Microsoft Visio / Lucidchart</h3>
+                        <div class="my-4 text-center text-secondary text-2xl font-bold">⬇️ THAY THẾ BẰNG ⬇️</div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Tiêu chuẩn văn phòng</div>
+                        <h2 class="text-3xl font-extrabold text-white">draw.io</h2>
+                        <span class="inline-block mt-2 bg-primary text-white text-xs px-3 py-1 rounded-md font-semibold">Diagrams Desktop App</span>
                     </div>
-                    <div class="flex gap-1.5 justify-center">
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WIN</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">MAC</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">LIN</span>
+                    <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Windows</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">macOS</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Linux</span>
                     </div>
                 </div>
-                <div class="flex-1 bg-[#161530] p-6 flex flex-col justify-between">
+                <div class="md:col-span-7 flex flex-col justify-between">
                     <div>
-                        <div class="inline-block bg-[#ff72ce]/15 border border-[#ff72ce]/30 text-[#ff72ce] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4">
-                            Giấy phép Apache 2.0 • Offline 100%
-                        </div>
-                        <h4 class="text-base font-extrabold text-white leading-tight mb-3">Vẽ Sơ Đồ Quy Trình Tiêu Chuẩn</h4>
-                        <p class="text-[12px] text-gray-300 leading-relaxed mb-4">
-                            Giao diện tối giản, sắp xếp thanh công cụ kéo thả trực quan. Bạn có thể nhanh chóng xây dựng các flowchart quy trình hoặc sơ đồ tổ chức.
+                        <div class="inline-block bg-accent/15 text-accent text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Giấy phép Apache 2.0 • Offline 100%</div>
+                        <h4 class="text-2xl font-extrabold text-dark mb-3">Vẽ Sơ Đồ Quy Trình Kéo Thả Trực Quan</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Giao diện tối giản mang cấu trúc của một phần mềm văn phòng cổ điển. Bạn chỉ việc lựa chọn linh kiện hình khối bên trái màn hình, kéo chúng vào trang vẽ và liên kết dây sơ đồ nhanh chóng.
                         </p>
-                        <div class="space-y-2 text-[12px] text-gray-200">
+                        <div class="space-y-2 text-sm">
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Tích hợp hàng ngàn mẫu template chuyên nghiệp</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Tích hợp sẵn hàng ngàn template sơ đồ chuyên nghiệp</span>
                             </div>
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Xuất ảnh PNG sắc nét, file vector sơ đồ chất lượng</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Hỗ trợ xuất ảnh PNG chất lượng cao, file PDF sơ đồ sắc nét</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#222145]/60 border-l-4 border-yellow-500 p-3 rounded-r-xl">
-                        <span class="text-[9px] font-bold text-yellow-500 uppercase block mb-0.5">🔒 AN TOÀN TUYỆT ĐỐI</span>
-                        <p class="text-[11px] text-gray-400 leading-normal">
-                            Xử lý ngoại tuyến 100% trên máy tính giúp bảo vệ bí mật thông tin kinh doanh của doanh nghiệp.
+                    <div class="mt-6 pt-4 border-t border-gray-100 bg-bglight p-3 rounded-xl border border-[#ff72ce]/10">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">💡 GIẢI PHÁP NỘI BỘ HOÀN HẢO:</span>
+                        <p class="text-[12px] text-gray-500 leading-relaxed">
+                            Mọi thông tin thiết kế của phòng ban đều được xử lý cục bộ trên thiết bị của nhân viên, hoàn toàn đáp ứng các tiêu chuẩn bảo mật dữ liệu của doanh nghiệp lớn.
                         </p>
                     </div>
                 </div>
@@ -417,67 +378,62 @@
     </div>
 
 
-    <!-- 06. NÉN & GIẢI NÉN -->
-    <div class="card-wrapper">
-        <div id="card-06" class="square-card rounded-3xl overflow-hidden flex flex-col">
-            <div class="h-14 bg-[#090815] px-6 flex items-center justify-between border-b border-[#222145]">
+    <!-- 06. NÉN & GIẢI NÉN FILE -->
+    <div class="relative w-full max-w-4xl my-24">
+        <div class="absolute -top-12 left-0 right-0 flex justify-between text-xs text-secondary font-semibold border-b border-dashed border-secondary/40 pb-2">
+            <span>✂️ KHUNG CẮT ẢNH SỐ 6 (NÉN FILE)</span>
+            <span>Tỷ lệ: 4:3 / Ngang</span>
+        </div>
+        
+        <div class="saas-card rounded-3xl overflow-hidden">
+            <div class="bg-dark/5 px-6 py-4 flex items-center justify-between border-b border-dark/10">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-red-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-green-400"></span>
                 </div>
-                <div class="text-[10px] font-extrabold tracking-widest text-[#8c94ff] uppercase">06 // FILE COMPRESSION</div>
-                <button onclick="downloadCard('card-06', '06_Compression')" class="btn-download bg-primary hover:bg-[#8c94ff] text-white text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-[#8c94ff] transition-all">
-                    TẢI ẢNH 📸
-                </button>
+                <div class="text-xs font-bold text-dark/40 tracking-wider uppercase">06. Safe Compression tool</div>
+                <div class="w-16"></div>
             </div>
-            <div class="flex-1 flex">
-                <div class="w-[220px] bg-[#0f0e24] p-6 border-r border-[#222145] flex flex-col justify-between">
-                    <div class="space-y-5">
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#8c94ff]/60 tracking-wider uppercase block mb-1.5">Bản gốc trả phí</span>
-                            <div class="bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-2 rounded-xl line-through">
-                                WinRAR / WinZip
-                            </div>
-                        </div>
-                        <div class="text-center text-[#ff72ce] text-xs font-bold">⬇ THAY THẾ BẰNG ⬇</div>
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#ff72ce] tracking-wider uppercase block mb-1.5">Đẹp & Không quảng cáo</span>
-                            <div class="bg-primary/20 border-2 border-primary text-white text-sm font-black px-3 py-2.5 rounded-xl text-center shadow-[0_0_15px_rgba(86,84,254,0.3)]">
-                                PEAZIP
-                            </div>
-                        </div>
+            <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-5 flex flex-col justify-between bg-dark text-white rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bản gốc trả phí</div>
+                        <h3 class="text-xl font-bold text-gray-300 line-through">WinRAR / WinZip</h3>
+                        <div class="my-4 text-center text-secondary text-2xl font-bold">⬇️ THAY THẾ BẰNG ⬇️</div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Tiện ích tối giản</div>
+                        <h2 class="text-3xl font-extrabold text-white">PEAZIP</h2>
+                        <span class="inline-block mt-2 bg-primary text-white text-xs px-3 py-1 rounded-md font-semibold">Elegant File Archiver</span>
                     </div>
-                    <div class="flex gap-1.5 justify-center">
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WIN</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">MAC</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">LIN</span>
+                    <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Windows</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">macOS</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Linux</span>
                     </div>
                 </div>
-                <div class="flex-1 bg-[#161530] p-6 flex flex-col justify-between">
+                <div class="md:col-span-7 flex flex-col justify-between">
                     <div>
-                        <div class="inline-block bg-[#ff72ce]/15 border border-[#ff72ce]/30 text-[#ff72ce] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4">
-                            Mã nguồn mở LGPLv3 • Sạch 100%
-                        </div>
-                        <h4 class="text-base font-extrabold text-white leading-tight mb-3">Trình Nén & Giải Nén Siêu Tốc</h4>
-                        <p class="text-[12px] text-gray-300 leading-relaxed mb-4">
-                            Giao diện đồ họa tối giản cực kỳ thanh lịch. <strong class="text-[#8c94ff]">PeaZip</strong> hỗ trợ đọc và giải nén hơn 200 định dạng phổ biến bao gồm <strong class="text-[#ff72ce]">.rar, .zip, .7z</strong>.
+                        <div class="inline-block bg-accent/15 text-accent text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Mã nguồn mở LGPLv3 • Miễn phí vĩnh viễn</div>
+                        <h4 class="text-2xl font-extrabold text-dark mb-3">Giải Nén Tốc Độ & Giao Diện Sạch</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Rất nhiều doanh nghiệp vô tình vi phạm luật bản quyền khi cài WinRAR bản cũ cho nhân viên. <strong class="text-primary">PeaZip</strong> thay thế hoàn hảo với lõi nén mạnh của 7-Zip cùng giao diện đẹp, trực quan, không có quảng cáo.
                         </p>
-                        <div class="space-y-2 text-[12px] text-gray-200">
+                        <div class="space-y-2 text-sm">
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Thao tác kéo thả tập tin cực kỳ mượt mà</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Mở và đọc hơn 200 loại định dạng tệp nén khác nhau (.zip, .7z, .rar)</span>
                             </div>
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Hỗ trợ bảo mật đặt mật khẩu nén tệp tin</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Mã hóa mật khẩu bảo mật chuẩn cao AES-256</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#222145]/60 border-l-4 border-yellow-500 p-3 rounded-r-xl">
-                        <span class="text-[9px] font-bold text-yellow-500 uppercase block mb-0.5">⚖️ CẢNH BÁO BẢN QUYỀN</span>
-                        <p class="text-[11px] text-gray-400 leading-normal">
-                            WinRAR yêu cầu trả phí thương mại sau 40 ngày. Sử dụng PeaZip là giải pháp an toàn pháp lý cho DN.
+                    <div class="mt-6 pt-4 border-t border-gray-100 bg-bglight p-3 rounded-xl border border-[#ff72ce]/10">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">🔐 SỰ AN TOÀN PHÁP LÝ:</span>
+                        <p class="text-[12px] text-gray-500 leading-relaxed">
+                            Mã nguồn mở hoàn toàn, không đính kèm mã độc hoặc các phần mềm rác quảng cáo đi kèm. Doanh nghiệp yên tâm khi vượt qua các bài kiểm tra audit phần mềm từ đối tác lớn.
                         </p>
                     </div>
                 </div>
@@ -486,67 +442,62 @@
     </div>
 
 
-    <!-- 07. BIÊN TẬP VIDEO -->
-    <div class="card-wrapper">
-        <div id="card-07" class="square-card rounded-3xl overflow-hidden flex flex-col">
-            <div class="h-14 bg-[#090815] px-6 flex items-center justify-between border-b border-[#222145]">
+    <!-- 07. DỰNG VIDEO TRUYỀN THÔNG -->
+    <div class="relative w-full max-w-4xl my-24">
+        <div class="absolute -top-12 left-0 right-0 flex justify-between text-xs text-secondary font-semibold border-b border-dashed border-secondary/40 pb-2">
+            <span>✂️ KHUNG CẮT ẢNH SỐ 7 (BIÊN TẬP VIDEO)</span>
+            <span>Tỷ lệ: 4:3 / Ngang</span>
+        </div>
+        
+        <div class="saas-card rounded-3xl overflow-hidden">
+            <div class="bg-dark/5 px-6 py-4 flex items-center justify-between border-b border-dark/10">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-red-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-green-400"></span>
                 </div>
-                <div class="text-[10px] font-extrabold tracking-widest text-[#8c94ff] uppercase">07 // VIDEO PRODUCTION</div>
-                <button onclick="downloadCard('card-07', '07_Video')" class="btn-download bg-primary hover:bg-[#8c94ff] text-white text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-[#8c94ff] transition-all">
-                    TẢI ẢNH 📸
-                </button>
+                <div class="text-xs font-bold text-dark/40 tracking-wider uppercase">07. Video Editor For Marketing</div>
+                <div class="w-16"></div>
             </div>
-            <div class="flex-1 flex">
-                <div class="w-[220px] bg-[#0f0e24] p-6 border-r border-[#222145] flex flex-col justify-between">
-                    <div class="space-y-5">
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#8c94ff]/60 tracking-wider uppercase block mb-1.5">Bản gốc trả phí</span>
-                            <div class="bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-2 rounded-xl line-through">
-                                Adobe Premiere Pro
-                            </div>
-                        </div>
-                        <div class="text-center text-[#ff72ce] text-xs font-bold">⬇ THAY THẾ BẰNG ⬇</div>
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#ff72ce] tracking-wider uppercase block mb-1.5">Kéo thả đa rãnh</span>
-                            <div class="bg-primary/20 border-2 border-primary text-white text-sm font-black px-3 py-2.5 rounded-xl text-center shadow-[0_0_15px_rgba(86,84,254,0.3)]">
-                                SHOTCUT
-                            </div>
-                        </div>
+            <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-5 flex flex-col justify-between bg-dark text-white rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bản gốc trả phí</div>
+                        <h3 class="text-xl font-bold text-gray-300 line-through">Adobe Premiere / CapCut Pro</h3>
+                        <div class="my-4 text-center text-secondary text-2xl font-bold">⬇️ THAY THẾ BẰNG ⬇️</div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Nhẹ và mượt mà</div>
+                        <h2 class="text-3xl font-extrabold text-white">SHOTCUT</h2>
+                        <span class="inline-block mt-2 bg-primary text-white text-xs px-3 py-1 rounded-md font-semibold">& Kdenlive Multi-track</span>
                     </div>
-                    <div class="flex gap-1.5 justify-center">
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WIN</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">MAC</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">LIN</span>
+                    <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Windows</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">macOS</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Linux</span>
                     </div>
                 </div>
-                <div class="flex-1 bg-[#161530] p-6 flex flex-col justify-between">
+                <div class="md:col-span-7 flex flex-col justify-between">
                     <div>
-                        <div class="inline-block bg-[#ff72ce]/15 border border-[#ff72ce]/30 text-[#ff72ce] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4">
-                            Mã Nguồn Mở GPL • Không Đính Logo
-                        </div>
-                        <h4 class="text-base font-extrabold text-white leading-tight mb-3">Dựng Video Truyền Thông Nhanh</h4>
-                        <p class="text-[12px] text-gray-300 leading-relaxed mb-4">
-                            Sử dụng dòng tiến trình đa rãnh (Timeline) kéo thả trực quan. Dễ dàng cắt ghép, thêm hiệu ứng chuyển cảnh và chèn chữ chạy mượt mà.
+                        <div class="inline-block bg-accent/15 text-accent text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Mã nguồn mở • GPL • Không Watermark</div>
+                        <h4 class="text-2xl font-extrabold text-dark mb-3">Biên Tập Video Đa Luồng Chuyên Nghiệp</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            <strong class="text-primary">Shotcut</strong> sở hữu giao diện biên tập kéo thả (Timeline) trực quan, tiêu chuẩn, giúp người dùng không chuyên nhanh chóng cắt ghép, lồng nhạc, chèn text chạy chữ mà không sợ bị ép dính logo của ứng dụng.
                         </p>
-                        <div class="space-y-2 text-[12px] text-gray-200">
+                        <div class="space-y-2 text-sm">
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Thư viện hiệu ứng phong phú, xuất video chất lượng 4K</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Bộ chuyển cảnh và hiệu ứng âm thanh phong phú</span>
                             </div>
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Mã nguồn mở miễn phí thương mại vĩnh viễn</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Xuất video chất lượng cao lên tới độ phân giải 4K</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#222145]/60 border-l-4 border-yellow-500 p-3 rounded-r-xl">
-                        <span class="text-[9px] font-bold text-yellow-500 uppercase block mb-0.5">⚠️ PHÁP LÝ THƯƠNG MẠI</span>
-                        <p class="text-[11px] text-gray-400 leading-normal">
-                            Nhiều công cụ (như CapCut) cấm thương mại ở bản free. Sử dụng Shotcut để được tự do bản quyền.
+                    <div class="mt-6 pt-4 border-t border-gray-100 bg-bglight p-3 rounded-xl border border-[#ff72ce]/10">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">📢 LƯU Ý KHI LÀM TRUYỀN THÔNG:</span>
+                        <p class="text-[12px] text-gray-500 leading-relaxed">
+                            Nhiều phiên bản của CapCut hạn chế tính năng hoặc cấm dùng cho tài khoản thương mại khi không thanh toán. Chọn Shotcut hoặc Kdenlive là giải pháp vĩnh viễn không lo pháp lý bản quyền.
                         </p>
                     </div>
                 </div>
@@ -555,67 +506,62 @@
     </div>
 
 
-    <!-- 08. GHI CHÚ -->
-    <div class="card-wrapper">
-        <div id="card-08" class="square-card rounded-3xl overflow-hidden flex flex-col">
-            <div class="h-14 bg-[#090815] px-6 flex items-center justify-between border-b border-[#222145]">
+    <!-- 08. QUẢN LÝ GHI CHÚ & KNOWLEDGE BASE -->
+    <div class="relative w-full max-w-4xl my-24">
+        <div class="absolute -top-12 left-0 right-0 flex justify-between text-xs text-secondary font-semibold border-b border-dashed border-secondary/40 pb-2">
+            <span>✂️ KHUNG CẮT ẢNH SỐ 8 (GHI CHÚ)</span>
+            <span>Tỷ lệ: 4:3 / Ngang</span>
+        </div>
+        
+        <div class="saas-card rounded-3xl overflow-hidden">
+            <div class="bg-dark/5 px-6 py-4 flex items-center justify-between border-b border-dark/10">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-red-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-green-400"></span>
                 </div>
-                <div class="text-[10px] font-extrabold tracking-widest text-[#8c94ff] uppercase">08 // KNOWLEDGE BASE</div>
-                <button onclick="downloadCard('card-08', '08_Note')" class="btn-download bg-primary hover:bg-[#8c94ff] text-white text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-[#8c94ff] transition-all">
-                    TẢI ẢNH 📸
-                </button>
+                <div class="text-xs font-bold text-dark/40 tracking-wider uppercase">08. Knowledge & Notes Manager</div>
+                <div class="w-16"></div>
             </div>
-            <div class="flex-1 flex">
-                <div class="w-[220px] bg-[#0f0e24] p-6 border-r border-[#222145] flex flex-col justify-between">
-                    <div class="space-y-5">
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#8c94ff]/60 tracking-wider uppercase block mb-1.5">Bản gốc trả phí</span>
-                            <div class="bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-2 rounded-xl line-through">
-                                Notion / Evernote
-                            </div>
-                        </div>
-                        <div class="text-center text-[#ff72ce] text-xs font-bold">⬇ THAY THẾ BẰNG ⬇</div>
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#ff72ce] tracking-wider uppercase block mb-1.5">Hồ sơ cá nhân</span>
-                            <div class="bg-primary/20 border-2 border-primary text-white text-sm font-black px-3 py-2.5 rounded-xl text-center shadow-[0_0_15px_rgba(86,84,254,0.3)]">
-                                OBSIDIAN
-                            </div>
-                        </div>
+            <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-5 flex flex-col justify-between bg-dark text-white rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bản gốc trả phí</div>
+                        <h3 class="text-xl font-bold text-gray-300 line-through">Notion / Evernote / OneNote</h3>
+                        <div class="my-4 text-center text-secondary text-2xl font-bold">⬇️ THAY THẾ BẰNG ⬇️</div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Cơ sở dữ liệu cá nhân</div>
+                        <h2 class="text-3xl font-extrabold text-white">OBSIDIAN</h2>
+                        <span class="inline-block mt-2 bg-primary text-white text-xs px-3 py-1 rounded-md font-semibold">Knowledge Graph System</span>
                     </div>
-                    <div class="flex gap-1.5 justify-center">
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WIN</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">MAC</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">LIN</span>
+                    <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Windows</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">macOS</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Linux</span>
                     </div>
                 </div>
-                <div class="flex-1 bg-[#161530] p-6 flex flex-col justify-between">
+                <div class="md:col-span-7 flex flex-col justify-between">
                     <div>
-                        <div class="inline-block bg-[#ff72ce]/15 border border-[#ff72ce]/30 text-[#ff72ce] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4">
-                            Free For Work • Tuyệt Đối Bảo Mật
-                        </div>
-                        <h4 class="text-base font-extrabold text-white leading-tight mb-3">Hệ Thống Quản Lý Tri Thức Liên Kết</h4>
-                        <p class="text-[12px] text-gray-300 leading-relaxed mb-4">
-                            Giao diện trực quan hỗ trợ biểu đồ tư duy liên kết mạng nhện (Graph View). Dữ liệu lưu cục bộ dưới dạng file text thuần túy (`.md`).
+                        <div class="inline-block bg-accent/15 text-accent text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Miễn Phí Cho Công Việc (Cập nhật 2025)</div>
+                        <h4 class="text-2xl font-extrabold text-dark mb-3">Xây Dựng Tài Liệu & Ghi Chú Liên Kết</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Giao diện tối giản cực đẹp, hỗ trợ hiển thị ghi chú liên kết dạng mạng nhện (Graph View). <strong class="text-primary">Obsidian</strong> là nơi lý tưởng để lưu trữ thông tin dự án, quy trình vận hành và tài liệu hướng dẫn công việc.
                         </p>
-                        <div class="space-y-2 text-[12px] text-gray-200">
+                        <div class="space-y-2 text-sm">
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Rất nhiều tiện ích: Kanban, Mindmap, Lịch trình</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Dữ liệu lưu dạng file Markdown (.md) ngay trên ổ cứng nội bộ</span>
                             </div>
                             <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Chuyển đổi dữ liệu và sao lưu vô cùng gọn nhẹ</span>
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Rất nhiều plugin hỗ trợ Kanban, Mindmap và lịch cá nhân</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#222145]/60 border-l-4 border-yellow-500 p-3 rounded-r-xl">
-                        <span class="text-[9px] font-bold text-yellow-500 uppercase block mb-0.5">🎉 CẬP NHẬT CHÍNH SÁCH</span>
-                        <p class="text-[11px] text-gray-400 leading-normal">
-                            Kể từ năm 2025, Obsidian đã cập nhật điều khoản miễn phí hoàn toàn cho mục đích thương mại.
+                    <div class="mt-6 pt-4 border-t border-gray-100 bg-bglight p-3 rounded-xl border border-[#ff72ce]/10">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">🎉 CHÍNH SÁCH MỚI CỦA OBSIDIAN:</span>
+                        <p class="text-[12px] text-gray-500 leading-relaxed">
+                            Kể từ năm 2025, Obsidian đã điều chỉnh điều khoản: Miễn phí hoàn toàn cho mọi mục đích sử dụng thương mại. Đây là thời cơ vàng để doanh nghiệp thay đổi không tốn chi phí.
                         </p>
                     </div>
                 </div>
@@ -624,109 +570,93 @@
     </div>
 
 
-    <!-- 09. ĐỒ HỌA CHUYÊN NGHIỆP -->
-    <div class="card-wrapper">
-        <div id="card-09" class="square-card rounded-3xl overflow-hidden flex flex-col">
-            <div class="h-14 bg-[#090815] px-6 flex items-center justify-between border-b border-[#222145]">
-                <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                    <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
-                </div>
-                <div class="text-[10px] font-extrabold tracking-widest text-[#8c94ff] uppercase">09 // PROFESSIONAL DESIGN</div>
-                <button onclick="downloadCard('card-09', '09_Creative')" class="btn-download bg-primary hover:bg-[#8c94ff] text-white text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-[#8c94ff] transition-all">
-                    TẢI ẢNH 📸
-                </button>
-            </div>
-            <div class="flex-1 flex">
-                <div class="w-[220px] bg-[#0f0e24] p-6 border-r border-[#222145] flex flex-col justify-between">
-                    <div class="space-y-5">
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#8c94ff]/60 tracking-wider uppercase block mb-1.5">Bản gốc trả phí</span>
-                            <div class="bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-2 rounded-xl line-through">
-                                Adobe CC Suite
-                            </div>
-                        </div>
-                        <div class="text-center text-[#ff72ce] text-xs font-bold">⬇ THAY THẾ BẰNG ⬇</div>
-                        <div>
-                            <span class="text-[9px] font-extrabold text-[#ff72ce] tracking-wider uppercase block mb-1.5">Hợp nhất Canva</span>
-                            <div class="bg-primary/20 border-2 border-primary text-white text-sm font-black px-3 py-2.5 rounded-xl text-center shadow-[0_0_15px_rgba(86,84,254,0.3)]">
-                                AFFINITY
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex gap-1.5 justify-center">
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">WIN</span>
-                        <span class="bg-[#1f1e3d] text-[#8c94ff] text-[9px] font-bold px-2 py-1 rounded">MAC</span>
-                    </div>
-                </div>
-                <div class="flex-1 bg-[#161530] p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="inline-block bg-[#ff72ce]/15 border border-[#ff72ce]/30 text-[#ff72ce] text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4">
-                            Freemium Model • Sát Cánh Adobe
-                        </div>
-                        <h4 class="text-base font-extrabold text-white leading-tight mb-3">Bộ Ba Đồ Họa Hợp Nhất Chuyên Nghiệp</h4>
-                        <p class="text-[12px] text-gray-300 leading-relaxed mb-4">
-                            Sau khi thuộc về Canva, <strong class="text-primary">Affinity</strong> đã cung cấp giải pháp **miễn phí hoàn toàn** cho bộ ba công cụ thiết kế, dàn trang, xử lý pixel ngoại tuyến mạnh mẽ.
-                        </p>
-                        <div class="space-y-2 text-[12px] text-gray-200">
-                            <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Đọc và sửa trực tiếp file .PSD và .AI nguyên layer</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <span class="text-[#ff72ce]">✦</span>
-                                <span>Hiệu năng mượt mà hơn hẳn Photoshop/Illustrator</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-[#222145]/60 border-l-4 border-yellow-500 p-3 rounded-r-xl">
-                        <span class="text-[9px] font-bold text-yellow-500 uppercase block mb-0.5">🤖 CÔNG CỤ AI</span>
-                        <p class="text-[11px] text-gray-400 leading-normal">
-                            Chỉ các tính năng AI thế hệ mới (Generative Fill) mới cần đồng bộ qua tài khoản Canva Pro trả phí.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <!-- 09. ĐỒ HỌA & THIẾT KẾ CHUYÊN SÂU (BỔ SUNG MỚI) -->
+    <div class="relative w-full max-w-4xl my-24">
+        <!-- Đường biên chỉ dẫn cắt ảnh -->
+        <div class="absolute -top-12 left-0 right-0 flex justify-between text-xs text-secondary font-semibold border-b border-dashed border-secondary/40 pb-2">
+            <span>✂️ KHUNG CẮT ẢNH SỐ 9 (ĐỒ HỌA CHUYÊN NGHIỆP)</span>
+            <span>Tỷ lệ: 4:3 / Ngang</span>
         </div>
-    </div>
-
-    <!-- SCRIPT CHỤP ẢNH CHẤT LƯỢNG CAO -->
-    <script>
-        function downloadCard(cardId, fileName) {
-            const cardElement = document.getElementById(cardId);
-            const downloadBtn = cardElement.querySelector('.btn-download');
+        
+        <div class="saas-card rounded-3xl overflow-hidden">
+            <!-- SaaS Window Topbar -->
+            <div class="bg-dark/5 px-6 py-4 flex items-center justify-between border-b border-dark/10">
+                <div class="flex items-center gap-2">
+                    <span class="w-3.5 h-3.5 rounded-full bg-red-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-green-400"></span>
+                </div>
+                <div class="text-xs font-bold text-dark/40 tracking-wider uppercase">09. Professional Creative Suite</div>
+                <div class="w-16"></div>
+            </div>
             
-            // Ẩn nút bấm để không hiển thị trong file ảnh xuất ra
-            if (downloadBtn) {
-                downloadBtn.style.visibility = 'hidden';
-            }
+            <!-- Main Card Content -->
+            <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <!-- Left panel: SaaS Simulation Visual -->
+                <div class="md:col-span-5 flex flex-col justify-between bg-dark text-white rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bản gốc trả phí</div>
+                        <h3 class="text-xl font-bold text-gray-300 line-through">Photoshop / Illustrator / InDesign</h3>
+                        <div class="my-4 text-center text-secondary text-2xl font-bold">⬇️ THAY THẾ BẰNG ⬇️</div>
+                        <div class="text-xs text-accent font-bold tracking-widest uppercase mb-1">Bộ 3 trong 1 của Canva</div>
+                        <h2 class="text-3xl font-extrabold text-white">AFFINITY</h2>
+                        <span class="inline-block mt-2 bg-primary text-white text-xs px-3 py-1 rounded-md font-semibold">Affinity by Canva v3</span>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">Windows</span>
+                        <span class="bg-white/10 text-white text-[11px] font-medium px-2 py-0.5 rounded">macOS</span>
+                    </div>
+                </div>
 
-            // Thực hiện dựng ảnh ở độ sắc nét cao (Scale: 3)
-            html2canvas(cardElement, {
-                scale: 3, 
-                useCORS: true,
-                backgroundColor: '#fff7fc',
-                width: 600,  // Cố định chiều rộng canvas 
-                height: 600  // Cố định chiều cao canvas
-            }).then(canvas => {
-                const link = document.createElement('a');
-                link.download = `${fileName}.png`;
-                link.href = canvas.toDataURL('image/png');
-                link.click();
-                
-                // Hiện lại nút bấm
-                if (downloadBtn) {
-                    downloadBtn.style.visibility = 'visible';
-                }
-            }).catch(err => {
-                console.error("Lỗi:", err);
-                if (downloadBtn) {
-                    downloadBtn.style.visibility = 'visible';
-                }
-            });
-        }
-    </script>
+                <!-- Right panel: Details & Features -->
+                <div class="md:col-span-7 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-accent/15 text-accent text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Canva Freemium Model • 3 Không Gian Độc Lập</div>
+                        <h4 class="text-2xl font-extrabold text-dark mb-3">Hệ Sinh Thái Thiết Kế Sát Sườn Adobe</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Sau khi sáp nhập vào Canva, <strong class="text-primary">Affinity</strong> đã hợp nhất và mở <strong class="text-accent">Miễn phí hoàn toàn</strong> cho mọi tính năng thiết kế ngoại tuyến cốt lõi (Pixel, Vector, Layout) trên máy tính. Bạn chỉ cần đăng nhập bằng tài khoản Canva miễn phí là có thể kích hoạt sử dụng trọn đời.
+                        </p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-start gap-2">
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Tương thích hoàn hảo với phím tắt và định dạng tệp .PSD / .AI</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-primary mt-0.5">✔</span>
+                                <span class="text-gray-700">Không cần trả phí thuê bao hàng tháng đắt đỏ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 bg-bglight p-3 rounded-xl border border-[#ff72ce]/10">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">🤖 TÍNH NĂNG AI TRẢ PHÍ (TÙY CHỌN):</span>
+                        <p class="text-[12px] text-gray-500 leading-relaxed">
+                            Mọi chức năng vẽ, blend màu cơ bản là miễn phí. Chỉ các công cụ AI đám mây cao cấp (Generative Fill, Generative Expand) mới cần đăng ký thêm Canva Pro hoặc Enterprise để mở khóa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PHẦN CHÂN TRANG / SUMMARY CARD -->
+    <div class="max-w-4xl w-full mt-32 text-center py-16 px-6 bg-primary text-white rounded-3xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-accent/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-secondary/30 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-10">
+            <h2 class="text-3xl font-extrabold mb-4">Hãy Để Doanh Nghiệp Bạn Tự Do Phát Triển</h2>
+            <p class="max-w-2xl mx-auto text-white/80 text-sm md:text-base leading-relaxed mb-8">
+                Tất cả các phần mềm trong danh sách đều đã vượt qua các bài kiểm tra thực tế về hiệu suất, tính thân thiện của giao diện và đáp ứng tuyệt đối các yêu cầu về an toàn pháp lý doanh nghiệp.
+            </p>
+            <div class="inline-flex flex-wrap justify-center gap-6 text-sm font-bold">
+                <span class="bg-white/15 px-4 py-2 rounded-full">✓ 100% Không Sợ Phạt Bản Quyền</span>
+                <span class="bg-white/15 px-4 py-2 rounded-full">✓ Chạy Tốt Trên 3 Nền Tảng</span>
+                <span class="bg-white/15 px-4 py-2 rounded-full">✓ Dễ Dùng Cho Non-IT</span>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
